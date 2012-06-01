@@ -1,0 +1,71 @@
+<%- model_class = @profile.class -%>
+<h1><%=t '.title', :default => model_class.model_name.human %></h1>
+
+<p>
+  <strong><%= model_class.human_attribute_name(:no) %>:</strong><br>
+  <%= @profile.no %>
+</p>
+<p>
+  <strong><%= model_class.human_attribute_name(:name) %>:</strong><br>
+  <%= @profile.name %>
+</p>
+<p>
+  <strong><%= model_class.human_attribute_name(:jointime) %>:</strong><br>
+  <%= @profile.jointime %>
+</p>
+<p>
+  <strong><%= model_class.human_attribute_name(:lefttime) %>:</strong><br>
+  <%= @profile.lefttime %>
+</p>
+<p>
+  <strong><%= model_class.human_attribute_name(:birthday) %>:</strong><br>
+  <%= @profile.birthday %>
+</p>
+<p>
+  <strong><%= model_class.human_attribute_name(:qq) %>:</strong><br>
+  <%= @profile.qq %>
+</p>
+<p>
+  <strong><%= model_class.human_attribute_name(:email) %>:</strong><br>
+  <%= @profile.email %>
+</p>
+<p>
+  <strong><%= model_class.human_attribute_name(:phone) %>:</strong><br>
+  <%= @profile.phone %>
+</p>
+<p>
+  <strong><%= model_class.human_attribute_name(:city) %>:</strong><br>
+  <%= @profile.city %>
+</p>
+<p>
+  <strong><%= model_class.human_attribute_name(:bornat) %>:</strong><br>
+  <%= @profile.bornat %>
+</p>
+<p>
+  <strong><%= model_class.human_attribute_name(:slogan) %>:</strong><br>
+  <%= @profile.slogan %>
+</p>
+<p>
+  <strong><%= model_class.human_attribute_name(:sweibo) %>:</strong><br>
+  <%= @profile.sweibo %>
+</p>
+<p>
+  <strong><%= model_class.human_attribute_name(:qweibo) %>:</strong><br>
+  <%= @profile.qweibo %>
+</p>
+<p>
+  <strong><%= model_class.human_attribute_name(:site) %>:</strong><br>
+  <%= @profile.site %>
+</p>
+
+<div class="form-actions">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              profiles_path, :class => 'btn'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_profile_path(@profile), :class => 'btn' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              profile_path(@profile),
+              :method => 'delete',
+              :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')),
+              :class => 'btn btn-danger' %>
+</div>

@@ -1,0 +1,101 @@
+<%= form_for @profile, :html => { :class => 'form-horizontal' } do |f| %>
+  <div class="control-group">
+    <%= f.label :no, t('activerecord.attributes.profile.no2'), :class => 'control-label' %>
+    <div class="controls">
+      <%= f.number_field :no, :class => 'number_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :name, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :name, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :jointime, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.date_select :jointime, :class => 'date_select', :include_blank => true, :start_year => 2003, :end_year => Time.now.year %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :lefttime, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.date_select :lefttime, :class => 'date_select', :include_blank => true, :start_year => 2003, :end_year => Time.now.year %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :birthday, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.date_select :birthday, :class => 'date_select', :include_blank => true, :start_year => 1975, :end_year => Time.now.year - 18 %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :qq, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :qq, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :email, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :email, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :phone, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :phone, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :city, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :city, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :bornat, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :bornat, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :slogan, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :slogan, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :sweibo, :class => 'control-label' %>
+    <div class="controls">
+      <div class="input-prepend">
+        <span class="add-on">http://weibo.com/</span>
+        <%= f.text_field :sweibo, :class => 'span2' %>
+      </div>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :qweibo, :class => 'control-label' %>
+    <div class="controls">
+      <div class="input-prepend">
+        <span class="add-on">http://t.qq.com/</span>
+        <%= f.text_field :qweibo, :class => 'span2' %>
+      </div>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :site, :class => 'control-label' %>
+    <div class="controls">
+      <div class="input-prepend">
+        <span class="add-on">http://</span>
+        <%= f.text_field :site, :class => 'span3' %>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                profiles_path, :class => 'btn' %>
+  </div>
+<% end %>
